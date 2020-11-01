@@ -1,0 +1,140 @@
+@import url("https://fonts.googleapis.com/css2?family=Merriweather:wght@300&display=swap");
+@import "navbar";
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font-family: "Merriweather", sans-serif;
+}
+
+.hero {
+  background: $light;
+
+  &--container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin: 0 auto;
+    margin-top: 10rem;
+    height: 90vh;
+    z-index: 1;
+    max-width: 1200px;
+    padding: 0 24px;
+
+    @include tablet {
+      grid-template-columns: 1fr;
+      height: 100%;
+      margin-top: 5rem;
+    }
+
+    @include mobile {
+      margin-top: 2rem;
+    }
+
+    &--left {
+      width: 100%;
+      line-height: 1.2;
+
+      @include tablet {
+        line-height: 1.5;
+      }
+
+      @include mobile {
+        line-height: 2;
+      }
+    }
+
+    &--left h1 {
+      color: blue;
+      font-size: 4rem;
+      margin: 1rem 0;
+
+      @include tablet {
+        font-size: 3rem;
+        margin: 0.5rem 0;
+        line-height: 1;
+      }
+
+      @include mobile {
+        font-size: 2rem;
+        margin: 0.25rem 0;
+        line-height: 0.5;
+      }
+    }
+
+    &--left h2 {
+      color: $dark;
+      font-size: 2rem;
+
+      @include tablet {
+        font-size: 1.5rem;
+        line-height: 1;
+      }
+
+      @include mobile {
+        font-size: 1rem;
+        line-height: 0.5;
+      }
+    }
+
+    &--left p {
+      font-weight: 700;
+      margin: 1.5rem 0;
+
+      @include tablet {
+        margin: 1rem 0;
+      }
+
+      @include mobile {
+        margin: 0.5rem 0;
+      }
+    }
+
+    &--btn {
+      font-size: 1rem;
+      border: none;
+      outline: none;
+      background: $blue;
+      padding: 12px 32px;
+      border-radius: 4px;
+      margin-top: 2px;
+      cursor: pointer;
+      position: relative;
+      color: $light;
+      transition: all 0.3s;
+    }
+
+    &--btn a {
+      font-weight: 700;
+      position: relative;
+      z-index: 2;
+      color: $light;
+      text-decoration: none;
+
+      &:hover {
+        color: $dark;
+        transition: all 0.3s;
+      }
+    }
+
+    &--btn:after {
+      position: absolute;
+      content: "";
+      top: 0;
+      left: 0;
+      width: 0;
+      height: 100%;
+      background: $lime;
+      transition: all 0.3s;
+      border-radius: 4px;
+    }
+
+    &--btn:hover:after {
+      width: 100%;
+    }
+
+    &--right {
+      text-align: center;
+    }
+  }
+}
